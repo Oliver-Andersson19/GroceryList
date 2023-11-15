@@ -4,7 +4,9 @@ import productController from "../controllers/productController.js";
 const privateRoutes = Router();
 
 
-privateRoutes.get("/list", productController.getProducts);
+privateRoutes.get("/products", productController.getProducts);
+privateRoutes.delete("/products/:productId", productController.deleteProduct);
+
 
 
 export default privateRoutes;

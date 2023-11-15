@@ -6,5 +6,10 @@ async function getProductsList(userId) {
     return products;
 }
 
+async function deleteProduct(userId, productId) {
+    const [result] = await connection.execute("DELETE FROM product WHERE id = ? AND account_id = ?", [productId, userId]);
+    return result;
+}
 
-export default { getProductsList };
+
+export default { getProductsList, deleteProduct };
