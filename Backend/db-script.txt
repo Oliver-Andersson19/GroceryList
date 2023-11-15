@@ -1,0 +1,59 @@
+BASIC VERSION ------
+
+DROP DATABASE IF EXISTS grocerylist;
+CREATE DATABASE grocerylist;
+
+USE grocerylist;
+
+CREATE TABLE account (
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    username VARCHAR(255) UNIQUE,
+    password VARCHAR(255)
+);
+
+CREATE TABLE product (
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    amount INT,
+    name VARCHAR(255),
+    account_id INT,
+    FOREIGN KEY (account_id) REFERENCES account(id)
+);
+
+
+
+MOCK DATA VERSION -----
+
+DROP DATABASE IF EXISTS grocerylist;
+CREATE DATABASE grocerylist;
+
+USE grocerylist;
+
+CREATE TABLE account (
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    username VARCHAR(255) UNIQUE,
+    password VARCHAR(255)
+);
+
+CREATE TABLE product (
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    amount INT,
+    name VARCHAR(255),
+    account_id INT,
+    FOREIGN KEY (account_id) REFERENCES account(id)
+);
+
+INSERT INTO account (id, username, password) VALUES
+(1, 'user1', 'password'),
+(2, 'user2', 'password'),
+(3, 'user3', 'password');
+
+INSERT INTO product (amount, name, account_id) VALUES
+(2, 'Strawberries', 1),
+(1, 'Almond Milk', 2),
+(3, 'Granola', 3),
+(2, 'Salmon Fillet', 1),
+(1, 'Avocado', 2),
+(4, 'Rice', 3),
+(2, 'Peanut Butter', 1),
+(1, 'Bread Rolls', 2),
+(3, 'Mixed Nuts', 3);
