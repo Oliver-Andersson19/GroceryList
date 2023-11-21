@@ -14,7 +14,7 @@ CREATE TABLE account (
 CREATE TABLE product (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     amount INT,
-    name VARCHAR(255),
+    title VARCHAR(255),
     account_id INT,
     FOREIGN KEY (account_id) REFERENCES account(id)
 );
@@ -37,7 +37,7 @@ CREATE TABLE account (
 CREATE TABLE product (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     amount INT,
-    name VARCHAR(255),
+    title VARCHAR(255),
     account_id INT,
     FOREIGN KEY (account_id) REFERENCES account(id)
 );
@@ -47,7 +47,7 @@ INSERT INTO account (id, username, password) VALUES
 (2, 'user2', 'password'),
 (3, 'user3', 'password');
 
-INSERT INTO product (amount, name, account_id) VALUES
+INSERT INTO product (amount, title, account_id) VALUES
 (2, 'Strawberries', 1),
 (1, 'Almond Milk', 2),
 (3, 'Granola', 3),

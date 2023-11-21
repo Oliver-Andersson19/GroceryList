@@ -5,7 +5,9 @@ const privateRoutes = Router();
 
 
 privateRoutes.get("/products", productController.getProducts);
+privateRoutes.post("/products/new", productController.addProduct);
 privateRoutes.delete("/products/:productId", productController.deleteProduct);
+
 
 
 
