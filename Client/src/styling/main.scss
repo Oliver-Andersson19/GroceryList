@@ -1,0 +1,25 @@
+@use "./abstract/variables" as *;
+@import "./abstract/fonts";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    position: relative;
+    flex: 1;
+}
+
+
+body {
+    background-color: #252525;
+    color: white;
+}
