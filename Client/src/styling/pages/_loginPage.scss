@@ -1,0 +1,22 @@
+.login-page-wrapper {
+    flex: 1; // full height
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        padding: 1rem;
+
+        background-color: $whiteColor;
+
+        button {
+            border: none;
+            padding: .5rem,
+        }
+    }
+}

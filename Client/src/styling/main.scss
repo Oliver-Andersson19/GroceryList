@@ -1,6 +1,9 @@
 @use "./abstract/variables" as *;
 @import "./abstract/fonts";
 
+@import "./pages/loginPage";
+@import "./pages/listPage";
+
 * {
     margin: 0;
     padding: 0;
@@ -14,12 +17,16 @@
 }
 
 main {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    // add flex: 1 to child to fill full site
+
     flex: 1;
 }
 
 
 body {
-    background-color: #252525;
-    color: white;
+    background-color: $mainColor;
+    color: $blackColor;
 }
