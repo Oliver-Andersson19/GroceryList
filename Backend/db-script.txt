@@ -1,5 +1,3 @@
-BASIC VERSION ------
-
 DROP DATABASE IF EXISTS grocerylist;
 CREATE DATABASE grocerylist;
 
@@ -16,29 +14,7 @@ CREATE TABLE product (
     amount INT,
     title VARCHAR(255),
     account_id INT,
-    FOREIGN KEY (account_id) REFERENCES account(id)
-);
-
-
-
-MOCK DATA VERSION -----
-
-DROP DATABASE IF EXISTS grocerylist;
-CREATE DATABASE grocerylist;
-
-USE grocerylist;
-
-CREATE TABLE account (
-    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    username VARCHAR(255) UNIQUE,
-    password VARCHAR(255)
-);
-
-CREATE TABLE product (
-    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    amount INT,
-    title VARCHAR(255),
-    account_id INT,
+    checked BOOLEAN,
     FOREIGN KEY (account_id) REFERENCES account(id)
 );
 
@@ -47,13 +23,13 @@ INSERT INTO account (id, username, password) VALUES
 (2, 'user2', 'password'),
 (3, 'user3', 'password');
 
-INSERT INTO product (amount, title, account_id) VALUES
-(2, 'Strawberries', 1),
-(1, 'Almond Milk', 2),
-(3, 'Granola', 3),
-(2, 'Salmon Fillet', 1),
-(1, 'Avocado', 2),
-(4, 'Rice', 3),
-(2, 'Peanut Butter', 1),
-(1, 'Bread Rolls', 2),
-(3, 'Mixed Nuts', 3);
+INSERT INTO product (amount, title, account_id, checked) VALUES
+(2, 'Strawberries', 1, true),
+(1, 'Almond Milk', 2, false),
+(3, 'Granola', 3, true),
+(2, 'Salmon Fillet', 1, false),
+(1, 'Avocado', 2, true),
+(4, 'Rice', 3, false),
+(2, 'Peanut Butter', 1, true),
+(1, 'Bread Rolls', 2, false),
+(3, 'Mixed Nuts', 3, true);
